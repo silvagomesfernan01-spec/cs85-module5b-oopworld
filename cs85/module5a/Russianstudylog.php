@@ -21,7 +21,22 @@
     
      /**
      * Constructor — initializes a study log with real starting data.
+     *
+     * CONSTRUCTOR PREDICTION:
+     * Creating a RussianStudyLog object with:
+     * new RussianStudyLog("Nanda", 180, 42.5, "A2", 15, 40)
+     *
+     * should initialize:
+     * studentName = "Nanda"
+     * wordsLearned = 180
+     * studyHoursTotal = 42.5
+     * currentLevel = "A2"
+     * dayStreak = 15
+     * weeklyWordGoal = 40
+     *
+     * The constructor itself does not return or display anything.
      */
+     
     public function __construct($studentName, $wordsLearned, $studyHoursTotal, $currentLevel, $dayStreak, $weeklyWordGoal)
     {
         $this->studentName     = $studentName;
