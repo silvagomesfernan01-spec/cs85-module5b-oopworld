@@ -31,3 +31,14 @@
         $this->dayStreak       = $dayStreak;
         $this->weeklyWordGoal  = $weeklyWordGoal;
     }
+
+   /**
+     * 1. SUMMARY DISPLAY METHOD
+     *
+     * PREDICTION: For Nanda (180 words, 42.5 hrs, A2, 15-day streak)
+     * I expect something like:
+     * "=== Nanda's Russian Study Log ===
+     *  Level: A2 | Words learned: 180 | Hours studied: 42.5
+     *  Current streak: 15 day(s)"
+     */
+    
