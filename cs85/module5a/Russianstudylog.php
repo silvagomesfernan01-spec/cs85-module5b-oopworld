@@ -62,4 +62,18 @@
         }
         return round($this->wordsLearned / $this->studyHoursTotal, 2);
     }
- 
+
+    /**
+     * METHOD TO CHANGE A PROPERTY VALUE
+     * Logs a new study session: adds hours and new words, and bumps
+     * the streak by one day.
+     *
+     * PREDICTION: Calling logSession(1.5, 12) on Nanda should push
+     * wordsLearned to 192, studyHoursTotal to 44.0, and dayStreak to 16.
+     */
+    public function logSession($hours, $newWords)
+    {
+        $this->studyHoursTotal = $this->studyHoursTotal + $hours;
+        $this->wordsLearned    = $this->wordsLearned + $newWords;
+        $this->dayStreak       = $this->dayStreak + 1;
+    }
