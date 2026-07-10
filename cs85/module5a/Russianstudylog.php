@@ -48,3 +48,18 @@
              . "Hours studied: {$this->studyHoursTotal}\n"
              . "Current streak: {$this->dayStreak} day(s)";
     }
+
+     /**
+     * METHOD RETURNING A CALCULATED VALUE
+     * Calculates average new words learned per study hour.
+     *
+     * PREDICTION: 180 words / 42.5 hours = ~4.24 words/hour for Nanda.
+     */
+    public function wordsPerHour()
+    {
+        if ($this->studyHoursTotal <= 0) {
+            return 0;
+        }
+        return round($this->wordsLearned / $this->studyHoursTotal, 2);
+    }
+ 
