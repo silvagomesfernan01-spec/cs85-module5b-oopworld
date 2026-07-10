@@ -10,11 +10,24 @@
  */
 
  class RussianStudyLog
-{
-    // ---- Properties (6 total) ----
+ {
+    // ---- Properties ----
     public $studentName;
     public $wordsLearned;
     public $studyHoursTotal;
-    public $currentLevel;   // CEFR-style: A1, A2, B1, B2, C1, C2
+    public $currentLevel;   // A1, A2, B1, B2, C1, C2
     public $dayStreak;
     public $weeklyWordGoal;
+    
+     /**
+     * Constructor — initializes a study log with real starting data.
+     */
+    public function __construct($studentName, $wordsLearned, $studyHoursTotal, $currentLevel, $dayStreak, $weeklyWordGoal)
+    {
+        $this->studentName     = $studentName;
+        $this->wordsLearned    = $wordsLearned;
+        $this->studyHoursTotal = $studyHoursTotal;
+        $this->currentLevel    = $currentLevel;
+        $this->dayStreak       = $dayStreak;
+        $this->weeklyWordGoal  = $weeklyWordGoal;
+    }
