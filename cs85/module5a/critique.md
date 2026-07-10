@@ -7,7 +7,9 @@ wordsLearned, studyHoursTotal, and currentLevel that recommends the
 next CEFR level (A1 through C2) to move toward, based on simple word/hour
 thresholds."
 
-Raw AI-generated code
+## Raw AI-generated code
+
+```php
 
 phpfunction recommendNextLevel() {
   if ($this->currentLevel == "A1" && $this->wordsLearned > 100)
@@ -18,6 +20,7 @@ phpfunction recommendNextLevel() {
     return "Move to B2";
   return "Keep studying " . $this->currentLevel;
 }
+```
 
 Critique
 
