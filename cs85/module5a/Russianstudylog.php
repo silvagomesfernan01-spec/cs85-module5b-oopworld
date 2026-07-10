@@ -33,7 +33,7 @@
     }
 
    /**
-     * 1. SUMMARY DISPLAY METHOD
+     * SUMMARY DISPLAY METHOD
      *
      * PREDICTION: For Nanda (180 words, 42.5 hrs, A2, 15-day streak)
      * I expect something like:
@@ -41,4 +41,10 @@
      *  Level: A2 | Words learned: 180 | Hours studied: 42.5
      *  Current streak: 15 day(s)"
      */
-    
+    public function displaySummary()
+    {
+        return "=== {$this->studentName}'s Russian Study Log ===\n"
+             . "Level: {$this->currentLevel} | Words learned: {$this->wordsLearned} | "
+             . "Hours studied: {$this->studyHoursTotal}\n"
+             . "Current streak: {$this->dayStreak} day(s)";
+    }
