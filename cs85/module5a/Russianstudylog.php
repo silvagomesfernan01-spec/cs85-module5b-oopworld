@@ -140,3 +140,27 @@
              . "and {$hourThreshold} hours before moving on.";
     }
 }
+
+// ---------------------------------------------------------------
+// Creating and using objects
+// ---------------------------------------------------------------
+ 
+// Object 1: my own real(ish) data
+$nanda = new RussianStudyLog("Nanda", 180, 42.5, "A2", 15, 40);
+ 
+// Object 2: a classmate who's just starting out, for contrast
+$alex = new RussianStudyLog("Alex", 25, 8.0, "A1", 4, 20);
+ 
+echo $nanda->displaySummary() . "\n\n";
+echo "Words per hour (Nanda): " . $nanda->wordsPerHour() . "\n";
+echo $nanda->checkGoalStatus() . "\n";
+echo $nanda->recommendNextLevel() . "\n";
+ 
+echo "\n--- Logging a new study session for Nanda (1.5 hrs, 12 words) ---\n";
+$nanda->logSession(1.5, 12);
+echo $nanda->displaySummary() . "\n\n";
+ 
+echo $alex->displaySummary() . "\n\n";
+echo "Words per hour (Alex): " . $alex->wordsPerHour() . "\n";
+echo $alex->checkGoalStatus() . "\n";
+echo $alex->recommendNextLevel() . "\n";
