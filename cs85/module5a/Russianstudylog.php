@@ -77,3 +77,26 @@
         $this->wordsLearned    = $this->wordsLearned + $newWords;
         $this->dayStreak       = $this->dayStreak + 1;
     }
+
+     /**
+     * METHOD WITH DECISION LOGIC
+     * Checks whether this week's word goal has been met, based on
+     * words learned so far vs. the weekly goal.
+     *
+     * PREDICTION: With wordsLearned=180 and weeklyWordGoal=40, this
+     * is well past the goal, so I expect "Goal crushed! 180/40 words."
+     * A newer student with fewer words than their goal should instead
+     * get an "on track" or "behind" message.
+     */
+    public function checkGoalStatus()
+    {
+        if ($this->wordsLearned >= $this->weeklyWordGoal * 2) {
+            return "Goal crushed! {$this->wordsLearned}/{$this->weeklyWordGoal} words.";
+        } elseif ($this->wordsLearned >= $this->weeklyWordGoal) {
+            return "Goal met: {$this->wordsLearned}/{$this->weeklyWordGoal} words.";
+        } elseif ($this->wordsLearned >= $this->weeklyWordGoal * 0.5) {
+            return "On track: {$this->wordsLearned}/{$this->weeklyWordGoal} words so far.";
+        } else {
+            return "Behind pace: only {$this->wordsLearned}/{$this->weeklyWordGoal} words.";
+        }
+    }
