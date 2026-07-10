@@ -9,4 +9,12 @@
  * and whether I'm hitting my own goals.
  */
 
- 
+ class RussianStudyLog
+{
+    // ---- Properties (6 total) ----
+    public $studentName;
+    public $wordsLearned;
+    public $studyHoursTotal;
+    public $currentLevel;   // CEFR-style: A1, A2, B1, B2, C1, C2
+    public $dayStreak;
+    public $weeklyWordGoal;
