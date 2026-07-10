@@ -100,3 +100,43 @@
             return "Behind pace: only {$this->wordsLearned}/{$this->weeklyWordGoal} words.";
         }
     }
+
+     /**
+     * AI-GENERATED METHOD (see critique.md for prompt + critique)
+     * Recommends the next CEFR level to move toward, based on words
+     * learned and hours studied. This is MY cleaned-up version after
+     * critiquing the raw AI output.
+     *
+     * PREDICTION: Nanda (180 words, 42.5 hrs, currently A2) should be
+     * told she's ready to start B1, since she clears both thresholds.
+     */
+    public function recommendNextLevel()
+    {
+        $levels = array("A1", "A2", "B1", "B2", "C1", "C2");
+ 
+        // Find where the current level sits in the list
+        $currentIndex = -1;
+        for ($i = 0; $i < count($levels); $i++) {
+            if ($levels[$i] === $this->currentLevel) {
+                $currentIndex = $i;
+                break;
+            }
+        }
+ 
+        if ($currentIndex === -1 || $currentIndex === count($levels) - 1) {
+            return "You're already at the top tracked level ({$this->currentLevel}) — keep it up!";
+        }
+ 
+        $wordThreshold = ($currentIndex + 1) * 80;
+        $hourThreshold = ($currentIndex + 1) * 20;
+ 
+        if ($this->wordsLearned >= $wordThreshold && $this->studyHoursTotal >= $hourThreshold) {
+            $next = $levels[$currentIndex + 1];
+            return "Ready to start {$next}! You've cleared the {$this->currentLevel} benchmarks "
+                 . "({$wordThreshold}+ words, {$hourThreshold}+ hours).";
+        }
+ 
+        return "Keep building {$this->currentLevel}: aiming for {$wordThreshold} words "
+             . "and {$hourThreshold} hours before moving on.";
+    }
+}
