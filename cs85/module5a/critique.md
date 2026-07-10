@@ -39,8 +39,13 @@ several conditions instead of living in one ordered list.
 
 Changes I made
 
-Replaced the hardcoded if chain with a $levels array and a loop, so it works for every level (A1–C2) without duplicating cases.
-Added an hour threshold alongside the word threshold, since the raw version only checked words.
-Switched == to === for safer comparison.
-Added a fallback for an already-maxed-out or unrecognized level.
-Kept plain PHP style (no type hints) to match the rest of the class and the tutorial's level.
+• Replaced the hardcoded if chain with an ordered $levels array and a
+simple loop to find the student's position, so the same logic works
+for every level (A1 through C2) without duplicating cases.
+• Added an hour threshold alongside the word threshold, since the
+original prompt asked for both and the raw version silently dropped
+hours.
+• Switched == to === for strict, safer string comparison.
+• Added a fallback branch for an already-maxed-out or unrecognized level
+instead of letting it fall through to a generic, possibly misleading
+message.
