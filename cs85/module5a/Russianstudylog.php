@@ -117,7 +117,7 @@
     }
 
      /**
-     * AI-GENERATED METHOD (see critique.md for prompt + critique)
+     * AI-GENERATED METHOD 
      * Recommends the next CEFR level to move toward, based on words
      * learned and hours studied. This is MY cleaned-up version after
      * critiquing the raw AI output.
